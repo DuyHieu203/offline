@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>My Offline Text App</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h1 { color: #333; }
+    </style>
+</head>
+<body>
+    <h1>Chào mừng đến với Ứng dụng Văn bản Offline!</h1>
+    <p>Nội dung này sẽ có sẵn ngay cả khi không có kết nối Internet.</p>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(() => console.log('Service Worker registered'))
+                .catch(error => console.log('Service Worker registration failed', error));
+        }
+    </script>
+</body>
+</html>
